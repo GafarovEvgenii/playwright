@@ -27,7 +27,7 @@ test.describe('Authorization', () => {
       page.locator('[placeholder="Пароль"]').press('Enter')
     ]);
 
-    expect(page.locator('text=Мои курсы и профессии Расписание занятий')).toBeVisible;
+    expect(page.locator('text=Мои курсы и профессии Расписание занятий')).toBeVisible();
     await page.pause();
     await page.screenshot({
       path: './screenshots/Test1.png',
@@ -59,7 +59,7 @@ test.describe('Authorization', () => {
     page.locator('[placeholder="Пароль"]').press('Enter')
     ]);
 
-    expect(page.locator('[data-testid="login-error-hint"]')).toBeVisible;
+    expect(page.locator('[data-testid="login-error-hint"]')).toContainText('Вы ввели неправильно логин или пароль');
     await page.pause();
     await page.screenshot({
       path: './screenshots/Test2.png',
